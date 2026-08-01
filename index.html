@@ -1,1 +1,538 @@
-<h1>Raj Soni</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raj Soni · DevOps Engineer</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #0b1a2e;
+      padding: 2rem 1.5rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 28px;
+      box-shadow: 0 20px 60px rgba(0, 20, 40, 0.08);
+      padding: 2.5rem 2.8rem;
+    }
+
+    /* header / profile */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #eef2f6;
+      padding-bottom: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .name-title h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0b1a2e;
+      margin-bottom: 0.25rem;
+    }
+
+    .name-title .badge {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c5f8a;
+      background: #e6f0fa;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      margin-top: 0.15rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem 2rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-links a {
+      color: #1e3b5c;
+      text-decoration: none;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+      border-bottom: 1px dotted transparent;
+    }
+
+    .contact-links a:hover {
+      color: #0b2b4a;
+      border-bottom-color: #1e3b5c;
+    }
+
+    .contact-links i {
+      width: 1.2rem;
+      font-size: 1rem;
+      color: #2f5f8a;
+    }
+
+    /* summary */
+    .summary {
+      background: #f1f6fc;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      margin-bottom: 2.5rem;
+      border-left: 6px solid #1f5b8a;
+    }
+
+    .summary p {
+      font-size: 1.04rem;
+      color: #0b1f33;
+      max-width: 1000px;
+    }
+
+    /* grid layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 2.5rem;
+    }
+
+    /* left sidebar */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #1c4468;
+      border-bottom: 2px solid #dce5ef;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-block {
+      background: #f9fcff;
+      border-radius: 16px;
+      padding: 0.2rem 0 0.2rem 0;
+    }
+
+    .skill-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .skill-group h4 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #2c5f8a;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.6rem;
+    }
+
+    .skill-tag {
+      background: white;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1f3b57;
+      border: 1px solid #d2e0ed;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    }
+
+    .edu-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .edu-item .title {
+      font-weight: 600;
+      color: #0b1e32;
+    }
+
+    .edu-item .meta {
+      font-size: 0.9rem;
+      color: #2a4b6e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.3rem 0;
+      border-bottom: 1px dashed #e2eaf2;
+    }
+
+    .lang-item:last-child {
+      border-bottom: none;
+    }
+
+    /* right column */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .exp-item, .project-item {
+      margin-bottom: 1.5rem;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-header h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0a1e32;
+    }
+
+    .exp-header .sub {
+      font-weight: 500;
+      color: #2e5b7e;
+      font-size: 0.9rem;
+    }
+
+    .exp-header .date {
+      font-size: 0.85rem;
+      color: #3f6386;
+      background: #ecf3fa;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
+    }
+
+    .exp-desc {
+      margin-top: 0.3rem;
+      padding-left: 0.2rem;
+    }
+
+    .exp-desc ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .exp-desc li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      color: #1c3148;
+    }
+
+    .exp-desc li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #1f6a9e;
+      font-weight: 600;
+    }
+
+    .project-item {
+      border-bottom: 1px solid #e9eff5;
+      padding-bottom: 1.2rem;
+    }
+
+    .project-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .project-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .project-header h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0b1e32;
+    }
+
+    .project-header .tech-stack {
+      font-size: 0.8rem;
+      color: #1f5780;
+      background: #e7f0f9;
+      padding: 0.1rem 0.9rem;
+      border-radius: 30px;
+    }
+
+    .project-desc {
+      margin-top: 0.3rem;
+      font-size: 0.95rem;
+      color: #1f344b;
+      padding-left: 0.2rem;
+    }
+
+    .project-desc ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .project-desc li {
+      position: relative;
+      padding-left: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .project-desc li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #1f6a9e;
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 880px) {
+      .container {
+        padding: 1.8rem;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .header {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .contact-links {
+        gap: 0.8rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      body { padding: 1rem 0.5rem; }
+      .container { padding: 1.2rem; }
+      .name-title h1 { font-size: 2rem; }
+      .summary { padding: 1rem; }
+    }
+
+    /* small extras */
+    .inline-icon {
+      margin-right: 4px;
+      color: #1f5b8a;
+    }
+
+    .badge-pill {
+      display: inline-block;
+      background: #deeaf5;
+      padding: 0.05rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #1d4c70;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- header -->
+  <header class="header">
+    <div class="name-title">
+      <h1>RAJ SONI</h1>
+      <div class="badge"><i class="fas fa-code" style="margin-right: 8px;"></i>DevOps Engineer · Mobile & Web</div>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:rajsoni968392@gmail.com"><i class="fas fa-envelope"></i> rajsoni968392@gmail.com</a>
+      <a href="#"><i class="fas fa-phone-alt"></i> +91-8103615769</a>
+      <a href="#"><i class="fab fa-linkedin-in"></i> linkedin.com/in/raj-soni</a>
+      <a href="#"><i class="fab fa-github"></i> github.com/therajsoni</a>
+      <span><i class="fas fa-map-pin"></i> Pune, India</span>
+    </div>
+  </header>
+
+  <!-- summary -->
+  <div class="summary">
+    <p><i class="fas fa-quote-left" style="color:#1f5b8a; opacity:0.6; margin-right:6px;"></i>Motivated DevOps Engineer with hands-on experience in CI/CD automation, Kubernetes orchestration, Docker containerization, and multi-cloud infrastructure across AWS, GCP, and Azure through internship and academic projects. Skilled in Terraform, Jenkins, Git workflows, Linux administration, Bash/Python scripting, and infrastructure automation. Experienced in monitoring, observability, troubleshooting, and operational reliability using Prometheus, Grafana, Datadog, New Relic, and CloudWatch. Familiar with Site Reliability Engineering (SRE), incident management, cloud security best practices, deployment automation, and high-availability cloud-native environments. Passionate about building scalable, secure, and automated infrastructure platforms.</p>
+  </div>
+
+  <!-- two col -->
+  <div class="two-col">
+    <!-- left sidebar -->
+    <aside class="sidebar">
+      <!-- technical skills -->
+      <div>
+        <div class="section-title"><i class="fas fa-cog" style="margin-right: 8px;"></i>Technical Skills</div>
+        <div class="skill-block">
+          <div class="skill-group">
+            <h4>Containerization &amp; Orchestration</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Docker</span><span class="skill-tag">Docker Compose</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">Helm</span><span class="skill-tag">kubectl</span><span class="skill-tag">Istio</span><span class="skill-tag">ArgoCD</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Infrastructure &amp; CI/CD</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Terraform</span><span class="skill-tag">AWS CloudFormation</span><span class="skill-tag">Ansible</span><span class="skill-tag">Jenkins</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">GitLab</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Monitoring &amp; Logging</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Prometheus</span><span class="skill-tag">Grafana</span><span class="skill-tag">Datadog</span><span class="skill-tag">AWS CloudWatch</span><span class="skill-tag">New Relic</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Scripting &amp; Languages</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Bash</span><span class="skill-tag">Python</span><span class="skill-tag">Golang</span><span class="skill-tag">Java</span><span class="skill-tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Cloud &amp; Databases</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span><span class="skill-tag">GCP</span><span class="skill-tag">Azure</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">DynamoDB</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>DevOps &amp; SRE</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Incident Management</span><span class="skill-tag">RCA</span><span class="skill-tag">High Availability</span><span class="skill-tag">Security Best Practices</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <h4>Tools &amp; Practices</h4>
+            <div class="skill-tags">
+              <span class="skill-tag">SonarQube</span><span class="skill-tag">OWASP ZAP</span><span class="skill-tag">Trivy</span><span class="skill-tag">HashiCorp Vault</span><span class="skill-tag">AWS Secrets Manager</span><span class="skill-tag">Jira</span><span class="skill-tag">React/Next</span><span class="skill-tag">Node.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- education -->
+      <div>
+        <div class="section-title"><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i>Education</div>
+        <div class="edu-item">
+          <div class="title">B.Sc. Computer Science &amp; Maths</div>
+          <div class="meta"><span>EVPG College, Korba</span> <span>2026 · 65%</span></div>
+        </div>
+        <div class="edu-item">
+          <div class="title">Higher Secondary (12th) · Science</div>
+          <div class="meta"><span>Korba, CG</span> <span>2023 · 92%</span></div>
+        </div>
+        <div class="edu-item">
+          <div class="title">Secondary School (10th)</div>
+          <div class="meta"><span>Korba, CG</span> <span>2021 · 96%</span></div>
+        </div>
+      </div>
+
+      <!-- languages -->
+      <div>
+        <div class="section-title"><i class="fas fa-language" style="margin-right: 8px;"></i>Languages</div>
+        <div class="lang-item"><span>English</span> <span>Professional Working</span></div>
+        <div class="lang-item"><span>Hindi</span> <span>Native</span></div>
+      </div>
+    </aside>
+
+    <!-- main content: experience + projects -->
+    <main class="main-content">
+      <!-- experience -->
+      <section>
+        <div class="section-title"><i class="fas fa-briefcase" style="margin-right: 8px;"></i>Internship Experience</div>
+        <div class="exp-item">
+          <div class="exp-header">
+            <div><h3>DevOps Engineer Intern</h3><span class="sub">Hisan Labs Private Limited, Pune · Cloud &amp; DevOps Division</span></div>
+            <span class="date">Aug 2025 – Apr 2026</span>
+          </div>
+          <div class="exp-desc">
+            <ul>
+              <li>Designed and implemented a Jenkins-based CI/CD pipeline that reduced manual deployment effort by 60% through automated build, test, and deploy stages.</li>
+              <li>Configured GitHub webhooks to trigger automated build and deployment workflows on every code commit, ensuring rapid feedback loops.</li>
+              <li>Collaborated with development teams to integrate SonarQube for static code analysis into the CI pipeline, improving code quality across all services.</li>
+              <li>Containerized 3-tier web applications using Docker, writing custom Dockerfiles and Docker Compose configurations for consistent environments.</li>
+              <li>Built and pushed Docker images to Docker Hub; managed image versioning and tagging conventions across multiple services.</li>
+              <li>Configured Docker networking and persistent volumes for seamless communication between application containers and database services.</li>
+              <li>Deployed and managed containerized microservices on Kubernetes cluster using Deployments, Services, and ConfigMaps; maintained 99.5% uptime.</li>
+              <li>Configured Kubernetes Horizontal Pod Autoscaler (HPA) and implemented rolling update strategies for zero-downtime releases.</li>
+              <li>Automated provisioning of AWS EC2, VPCs, and security groups using Terraform, reducing infrastructure setup time by 40%.</li>
+              <li>Managed Terraform state files remotely using S3 backend with DynamoDB locking for safe concurrent operations.</li>
+              <li>Monitored application health using Prometheus and Grafana; configured alerts via CloudWatch for EC2 and RDS services.</li>
+              <li>Administered Linux (Ubuntu) servers including user management, cron job scheduling, log rotation, and UFW firewall configuration.</li>
+              <li>Participated in incident troubleshooting, root cause analysis (RCA), and supported infrastructure reliability and high availability.</li>
+              <li>Implemented security best practices including container image scanning and access control management for cloud-native applications.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section>
+        <div class="section-title"><i class="fas fa-rocket" style="margin-right: 8px;"></i>DevOps Projects</div>
+        <!-- project 1 -->
+        <div class="project-item">
+          <div class="project-header">
+            <h3>Cloud-Native Flight Reservation Microservices Platform</h3>
+            <span class="tech-stack">Docker · K8s · GitHub · Microservices</span>
+          </div>
+          <div class="project-desc">
+            <ul>
+              <li>Containerized 5+ independent microservices (booking, auth, payment, notification, API gateway) with custom Dockerfiles and multi-stage builds, reducing image size by 60%.</li>
+              <li>Deployed entire microservices suite on Kubernetes using Deployments, Services, and ConfigMaps; implemented rolling update strategy for zero-downtime releases.</li>
+              <li>Configured ClusterIP and LoadBalancer services along with NetworkPolicies for secure inter-service communication and external traffic routing.</li>
+              <li>Implemented Horizontal Pod Autoscaler (HPA) with custom CPU and memory thresholds, enabling the platform to handle 5x peak traffic automatically.</li>
+              <li>Managed source control and team collaboration through GitHub, enforcing branching strategy throughout the project lifecycle.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- project 2 -->
+        <div class="project-item">
+          <div class="project-header">
+            <h3>EASY CRUD – 3-Tier Application Deployment</h3>
+            <span class="tech-stack">Docker · Linux · Git · MySQL · Docker Compose</span>
+          </div>
+          <div class="project-desc">
+            <ul>
+              <li>Architected and deployed a production-grade 3-tier application (React frontend, Node.js backend, MySQL database) using Docker Compose with isolated bridge networks.</li>
+              <li>Containerized all three application layers; configured persistent volumes for MySQL ensuring data durability across container restarts.</li>
+              <li>Integrated backend RESTful APIs with MySQL using environment-variable-based connection management, eliminating hardcoded credentials.</li>
+              <li>Managed full project lifecycle using Git and GitHub, including feature branching, pull requests, and semantic version tagging for each production release.</li>
+              <li>Deployed and maintained the application on a Linux (Ubuntu 22.04) server, configuring system firewall rules and environment variables.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- small footer note (optional) -->
+      <div style="margin-top: 0.5rem; font-size: 0.8rem; color: #4d6f8e; border-top: 1px solid #e6edf5; padding-top: 1rem; display: flex; gap: 1.5rem; flex-wrap: wrap;">
+        <span><i class="fas fa-check-circle" style="color:#1f6a9e;"></i> CI/CD · IaC · Kubernetes</span>
+        <span><i class="fas fa-cloud"></i> AWS · GCP · Azure</span>
+        <span><i class="fas fa-shield-alt"></i> Security · SRE</span>
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
